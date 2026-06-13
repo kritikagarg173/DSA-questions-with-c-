@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+bool ratinmaze(char maze[][5], int i, int j, int n, int m, int sol[][5]){
+    //base case
+    if (i == n - 1 and j == m - 1){
+        sol[i][j] = 1;
+        for (int i = 0; i < n; ++i){
+            for (int j = 0; j < m; ++j){
+                cout << sol[i][j] << " ";
+            }
+            cout << endl;
+        }
+        cout << endl;
+        return false;
+    }
+    //recursive case
+    //assume jaha khade hai woh solution ka part hai
+    sol[i][j] = 1;
+    //check rightwards
+    if (j + 1 < m and maze[i][j+1]!='X'){
+        bool KyaRightSeRastaMila = ratinmaze(maze, i, j + 1, n, m, sol);
+        if (KyaRightSeRastaMila) return true;
+    }
+    //check downwards
+    if (i + 1 < n and maze[i + 1][j] !='X'){
+        bool KyaNeecheSeRastaHai = 
+        ratinmaze(maze, i + 1, j, n, m, sol);
+        if (KyaNeecheSeRastaHai) return true;
+    }
+    sol[i][j] = 0;// backtracking
+    return false;
+}
+int main()
+{
+    char maze[][5] = {
+        "0000",
+        "00XX",
+        "0000",
+        "XX00",
+    };
+    int sol[5][5] =  {0};
+    ratinmaze(maze, 0, 0, 4, 4, sol);
+    return 0;
+}
+int main()
+{
+    bool ratinmaze(char maze[][5], int i, int j, int n, int m, int sol[][5]){
+        bool kyaneecheseRastaHai= 
+        ratinmaze(maze,int n, int m, int sol[][5]){
+            sol[i][j] = 0;
+            return 0;
+        }
+        //check rightwards(we nedd to check rightwards of the cheque)
+        if (j + 1 < m and maze[i][j + 1] ! = 'X')
+    }
+}
+
+
+
+
+
+
+    
